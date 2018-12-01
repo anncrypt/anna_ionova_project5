@@ -1,0 +1,13 @@
+.dream-card {
+    width: calc(33% - 20px);
+    height: 300px; /* temp */
+
+    background-size: cover; /* cover */
+    background-position: center;
+
+    margin: 10px;
+}
+
+.dream-card-image {
+    width: 100%;
+}
