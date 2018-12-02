@@ -1,4 +1,5 @@
 .dream-card {
+    display: inline-block;
     width: calc(33% - 20px);
     height: 300px; /* temp */
 

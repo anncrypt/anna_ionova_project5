@@ -1,6 +1,8 @@
 .dream-gallery {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 25% auto 25%;
-    grid-template-rows: 25% 100px auto;
-    /* flex-wrap: wrap; */
+    grid-template-rows: 25% 100px auto; */
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 100%; */
 }

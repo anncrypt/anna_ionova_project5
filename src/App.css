@@ -2,11 +2,12 @@ body {
     background: rgb(241, 241, 240);
     font-size: 62.5%;
     /* background: url('./assets/clouds.jpeg') no-repeat center center; */
+    background: url('./assets/clouds.jpeg') repeat center center;
+    position: relative;
 }
 
 header {
-    background: url('./assets/clouds.jpeg') no-repeat center center;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     color: #075A3E;
 
     display: flex;

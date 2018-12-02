@@ -3,6 +3,8 @@ import './App.css';
 import firebase from './firebase';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
+import UploadOpenButton from './components/UploadOpenButton';
+import PopupUpload from './components/PopupUpload';
 
 
 // reference to the root of the database
@@ -16,6 +18,7 @@ class App extends Component {
       selectedFile: null,
       imgString: '',
       dreams: null,
+      popupIsOpen: false,
     }
   }
 
@@ -61,12 +64,26 @@ class App extends Component {
     })
   }
 
+  handlePopupOpen = () => {
+    this.setState({
+      popupIsOpen: true
+    })
+  }
+
+  handlePopupClose = () => {
+    this.setState({
+      popupIsOpen: false
+    })
+  }
+
   render() {
     return (
       <div className="App">
-
         <Header />
 
+        <UploadOpenButton onPopupOpen={this.handlePopupOpen} />
+        {this.state.popupIsOpen && <PopupUpload onPopupClose={this.handlePopupClose} /> } 
+      
         <input onChange={this.imgSelectedHandler} type="file" />
         <button 
           disabled={this.state.imgString === ''}

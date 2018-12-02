@@ -1,0 +1,8 @@
+.upload-open-button {
+  border-radius: 50%;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin: 25px;
+}
