@@ -9,7 +9,8 @@ import Loader from 'react-loader-spinner';
 
 // reference to the root of the database
 const dbRef = firebase.database().ref();
-console.log(dbRef);
+
+const bodyEl = document.querySelector('body');
 
 class App extends Component {
   constructor() {
@@ -17,13 +18,10 @@ class App extends Component {
     this.state = {
       selectedFile: null,
       filterByType: 'all',
-
       imgString: '',
       newDreamType: 'all',
-
       dreams: null,
       popupIsOpen: false,
-
       loadedDreams: false,
     }
   }
@@ -68,13 +66,13 @@ class App extends Component {
       imgString: '',
       popupIsOpen: false
     });
+    bodyEl.style.overflow = 'scroll';
   }
 
   handlePopupOpen = () => {
     this.setState({
       popupIsOpen: true
     });
-    const bodyEl = document.querySelector('body');
     bodyEl.style.overflow = 'hidden';
   }
 
@@ -82,7 +80,6 @@ class App extends Component {
     this.setState({
       popupIsOpen: false
     });
-    const bodyEl = document.querySelector('body');
     bodyEl.style.overflow = 'scroll';
   }
 
@@ -97,7 +94,7 @@ class App extends Component {
 
   handleFilterTypeChange = (filterType) => {
     this.setState({
-      filterByType: filterType
+      filterByType: filterType,
     });
   }
 

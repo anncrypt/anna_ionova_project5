@@ -9,7 +9,6 @@ class DreamCard extends Component {
 
     deleteDream = (e) => {
         // delete the dream from firebase
-        // const firebaseKey = e.target.id;
         const dreamRef = firebase.database().ref(`/${this.props.dbKey}`);
         dreamRef.remove();
     };

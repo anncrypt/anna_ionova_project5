@@ -5,39 +5,10 @@ body {
     background: rgb(241, 241, 240);
     font-size: 62.5%;
     background-color: #FDE9E2;
-    background: url('./assets/swirl.png') repeat center center;
-    /* background: linear-gradient(rgba(253, 233, 226, 0.767), #789cd667), url('./assets/swirl.png') repeat; */
+    background: url('./assets/clouds.jpeg') no-repeat center center;
     position: relative;
     font-family: 'Raleway', sans-serif;
-
-    /* overflow: hidden; */
 }
-
-
-.preventAllScrollingOnBody {
-    overflow: hidden;
-}
-
-/* header {
-    color: #075A3E;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-
-}   
-
-h1 {
-    margin: 0;
-    padding: 30px 0;
-    font-size: 4rem;
-    font-family: 'Cedarville Cursive', cursive;
-} */
-
-
-/* font-family: 'Cedarville Cursive', cursive; */
-/* font-family: 'Raleway', sans-serif; */
 
 .dream-loader-container {
     width: 100%;

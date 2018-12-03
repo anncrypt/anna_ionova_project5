@@ -1,5 +1,4 @@
 header {
-    color: #075A3E;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -7,8 +6,8 @@ header {
 }
 
 h1 {
+    color: #075A3E;
     margin: 0;
-    padding: 10px 0;
     font-size: 5rem;
     font-family: 'Cedarville Cursive', cursive;
 }
@@ -18,23 +17,16 @@ h1 {
     padding: 10px 20px;
     cursor: pointer;
     text-transform: lowercase;
-
     font-weight: 600;
     font-size: 1.1rem;
-
     border-radius: 3px;
     border: none;
-    /* 250,228,91 */
-    
-
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .filter-main,
 .filter-activities,
 .filter-skills {
-    /* background: #FAE45B; */
-    /* background: #FDE9E2; */
     background: #075A3E;
     color: white;
 }

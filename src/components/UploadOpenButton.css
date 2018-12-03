@@ -5,12 +5,7 @@
   height: 50px;
   cursor: pointer;
   margin: 25px;
-
-  /* border: 4px solid #FAE45B; */
   border: 4px solid #075A3E;
-
-  /* background: #075A3E; */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,8 +18,4 @@
 
 .popup-open-icon svg {
     color: #075A3E;
-}
-
-.popup-open-icon svg:hover {
-    /* color: tomato; */
 }

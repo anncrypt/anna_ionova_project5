@@ -4,7 +4,6 @@ import Icon from 'react-icons-kit';
 import { timesCircleO } from 'react-icons-kit/fa/timesCircleO';
 
 class PopupUpload extends Component {
-  // onSelectChange
 
   render() {
 
