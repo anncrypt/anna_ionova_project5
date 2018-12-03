@@ -5,7 +5,7 @@ body {
     background: rgb(241, 241, 240);
     font-size: 62.5%;
     background-color: #FDE9E2;
-    background: url('./assets/clouds.jpeg') no-repeat center center;
+    background: url('./assets/cork.jpeg') repeat;
     position: relative;
     font-family: 'Raleway', sans-serif;
 }
