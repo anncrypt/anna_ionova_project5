@@ -8,6 +8,14 @@ body {
     background: url('./assets/swirl.png') repeat center center;
     /* background: linear-gradient(rgba(253, 233, 226, 0.767), #789cd667), url('./assets/swirl.png') repeat; */
     position: relative;
+    font-family: 'Raleway', sans-serif;
+
+    /* overflow: hidden; */
+}
+
+
+.preventAllScrollingOnBody {
+    overflow: hidden;
 }
 
 /* header {

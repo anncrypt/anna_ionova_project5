@@ -26,9 +26,7 @@ class DreamCard extends Component {
                     <button className="delete-dream" onClick={this.deleteDream}>
                         <Icon 
                             className="delete-dream-icon"
-                            // style={{ color: '#ccc' }}
                             size={30}
-                            // color={'#ee'}
                             icon={timesCircleO}/>
                     </button>
                 </div>

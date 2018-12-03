@@ -7,7 +7,6 @@ import UploadOpenButton from './components/UploadOpenButton';
 import PopupUpload from './components/PopupUpload';
 import Loader from 'react-loader-spinner';
 
-
 // reference to the root of the database
 const dbRef = firebase.database().ref();
 console.log(dbRef);
@@ -35,18 +34,13 @@ class App extends Component {
       this.setState({
         dreams: snapshot.val(),
         loadedDreams: true,
-      })
+      });
     });
-  }
-
-  newImageTypeChangeHandler = (newType) => {
-
   }
 
   imgSelectedHandler = (e) => {
     // create a variable that holds the file
     const imgFile = e.target.files[0];
-
     // create a reader to transform file into data URL
     let imgReader = new FileReader();
     // read file
@@ -61,7 +55,6 @@ class App extends Component {
     this.setState({
       selectedFile: e.target.files[0]
     });
-    
   }
 
   imgUploadHandler = () => {
@@ -70,22 +63,27 @@ class App extends Component {
       type: this.state.newDreamType
     }
     dbRef.push(newImg);
+
     this.setState({
       imgString: '',
       popupIsOpen: false
-    })
+    });
   }
 
   handlePopupOpen = () => {
     this.setState({
       popupIsOpen: true
-    })
+    });
+    const bodyEl = document.querySelector('body');
+    bodyEl.style.overflow = 'hidden';
   }
 
   handlePopupClose = () => {
     this.setState({
       popupIsOpen: false
-    })
+    });
+    const bodyEl = document.querySelector('body');
+    bodyEl.style.overflow = 'scroll';
   }
 
   handleNewDreamTypeChange = (e) => {
@@ -94,32 +92,18 @@ class App extends Component {
 
     this.setState({
       newDreamType: e.target.value
-    })
+    });
   }
 
   handleFilterTypeChange = (filterType) => {
     this.setState({
       filterByType: filterType
-    })
+    });
   }
 
   render() {
-
-    // TODO: Finish this
-    let filteredDreams;
-    console.log('this.state.dreams');
-    console.log(this.state.dreams);
-
-    
-    // if (this.state.dreams !== null) {
-    //   filteredDreams = this.state.dreams.filter(dreamObj => {
-    //     return dreamObj.type === this.state.filterByType;
-    //   });
-    // }
-    // const 
-
     return (
-      <div className="App">
+      <div className="App" style={{overflow: 'hidden'}}>
         <Header 
           onFilterChange={this.handleFilterTypeChange}
         />
