@@ -1,43 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Cedarville+Cursive|Raleway:400,600');
+
+
 body {
     background: rgb(241, 241, 240);
     font-size: 62.5%;
-    /* background: url('./assets/clouds.jpeg') no-repeat center center; */
-    background: url('./assets/clouds.jpeg') repeat center center;
+    background-color: #FDE9E2;
+    background: url('./assets/swirl.png') repeat center center;
+    /* background: linear-gradient(rgba(253, 233, 226, 0.767), #789cd667), url('./assets/swirl.png') repeat; */
     position: relative;
 }
 
-header {
-    /* min-height: 100vh; */
+/* header {
     color: #075A3E;
 
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    /* justify-content: center; */
+
 }   
 
 h1 {
     margin: 0;
     padding: 30px 0;
-    font-size: 3rem;
+    font-size: 4rem;
+    font-family: 'Cedarville Cursive', cursive;
+} */
+
+
+/* font-family: 'Cedarville Cursive', cursive; */
+/* font-family: 'Raleway', sans-serif; */
+
+.dream-loader-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-
-.filter{
-    margin: 0 10px;
-    padding: 10px 20px;
-
-}
-
-.filter-main {
-    background: #FDE9E2;
-}
-
-.filter-activities {
-    background: #FAE45B;
-}
-
-.filter-skills {
-    background: #075A3E;
-}
-

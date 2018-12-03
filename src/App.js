@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Gallery from './components/Gallery';
 import UploadOpenButton from './components/UploadOpenButton';
 import PopupUpload from './components/PopupUpload';
+import Loader from 'react-loader-spinner';
 
 
 // reference to the root of the database
@@ -16,9 +17,15 @@ class App extends Component {
     super();
     this.state = {
       selectedFile: null,
+      filterByType: 'all',
+
       imgString: '',
+      newDreamType: 'all',
+
       dreams: null,
       popupIsOpen: false,
+
+      loadedDreams: false,
     }
   }
 
@@ -26,9 +33,14 @@ class App extends Component {
     // attach event listener to firebase
     dbRef.on('value', (snapshot) => {
       this.setState({
-        dreams: snapshot.val()
+        dreams: snapshot.val(),
+        loadedDreams: true,
       })
     });
+  }
+
+  newImageTypeChangeHandler = (newType) => {
+
   }
 
   imgSelectedHandler = (e) => {
@@ -43,9 +55,7 @@ class App extends Component {
     imgReader.onload = (event) => {
       this.setState({
         imgString: imgReader.result
-      });
-
-     
+      }); 
     }
 
     this.setState({
@@ -57,10 +67,12 @@ class App extends Component {
   imgUploadHandler = () => {
     const newImg = {
       url: this.state.imgString,
+      type: this.state.newDreamType
     }
     dbRef.push(newImg);
     this.setState({
       imgString: '',
+      popupIsOpen: false
     })
   }
 
@@ -76,31 +88,70 @@ class App extends Component {
     })
   }
 
+  handleNewDreamTypeChange = (e) => {
+    console.log('handleNewdreamtypechange runs');
+    console.log(e.target.value);
+
+    this.setState({
+      newDreamType: e.target.value
+    })
+  }
+
+  handleFilterTypeChange = (filterType) => {
+    this.setState({
+      filterByType: filterType
+    })
+  }
+
   render() {
+
+    // TODO: Finish this
+    let filteredDreams;
+    console.log('this.state.dreams');
+    console.log(this.state.dreams);
+
+    
+    // if (this.state.dreams !== null) {
+    //   filteredDreams = this.state.dreams.filter(dreamObj => {
+    //     return dreamObj.type === this.state.filterByType;
+    //   });
+    // }
+    // const 
+
     return (
       <div className="App">
-        <Header />
+        <Header 
+          onFilterChange={this.handleFilterTypeChange}
+        />
 
         <UploadOpenButton onPopupOpen={this.handlePopupOpen} />
-        {this.state.popupIsOpen && <PopupUpload onPopupClose={this.handlePopupClose} /> } 
-      
-        <input onChange={this.imgSelectedHandler} type="file" />
-        <button 
-          disabled={this.state.imgString === ''}
-          onClick={this.imgUploadHandler}
-        >Upload</button>
 
-        <Gallery dreams={this.state.dreams} />
+        {this.state.popupIsOpen && <PopupUpload 
+          onPopupClose={this.handlePopupClose}
+          onFileInputChange={this.imgSelectedHandler}
+          onUploadButtonClick={this.imgUploadHandler}
+          onDreamTypeChange={this.handleNewDreamTypeChange}
+          imgString={this.state.imgString}
+        /> }
+
+        { this.state.loadedDreams === false && 
+          <div className="dream-loader-container">
+            <Loader
+              type="Puff"
+              color="#075A3E"
+              height="100"
+              width="100"
+            />
+          </div> }
+
+        { this.state.loadedDreams === true && <Gallery 
+          dreams={this.state.dreams}
+          filterByType={this.state.filterByType}
+        /> }
       </div>
     );
   }
 }
 
 export default App;
-
-// when image is uploaded 
-// save it as a string to state
-// then save it to firebase
-
-// on app load get all images to firebase
 

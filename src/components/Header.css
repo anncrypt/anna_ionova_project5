@@ -1,0 +1,37 @@
+
+
+header {
+    /* min-height: 100vh; */
+    color: #075A3E;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}   
+
+h1 {
+    margin: 0;
+    padding: 30px 0;
+    font-size: 4rem;
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+.filter {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.filter-main {
+    background: #FDE9E2;
+}
+
+.filter-activities {
+    background: #FAE45B;
+}
+
+.filter-skills {
+    background: #075A3E;
+}
+

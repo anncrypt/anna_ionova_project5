@@ -1,14 +1,47 @@
 .dream-card {
-    display: inline-block;
+    /* display: inline-block; */
     width: calc(33% - 20px);
     height: 300px; /* temp */
-
     background-size: cover; /* cover */
     background-position: center;
-
     margin: 10px;
+    position: relative;
+
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
 }
 
 .dream-card-image {
     width: 100%;
+}
+
+.delete-dream-container {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.delete-dream {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-dream-icon {
+    background: white;
+    border-radius: 50%;
+}
+
+.delete-dream-icon svg {
+    color: #ccc;
+}
+
+.delete-dream-icon svg:hover {
+    color: tomato;
 }
