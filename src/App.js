@@ -73,6 +73,8 @@ class App extends Component {
     this.setState({
       popupIsOpen: true
     });
+    // scroll page to x=0, y=0 (to the top)
+    window.scrollTo(0,0)
     bodyEl.style.overflow = 'hidden';
   }
 
